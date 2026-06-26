@@ -39,7 +39,7 @@ Token173中转API：
 Token173中转 API 提供一个 **OpenAI 协议兼容的接口**：
 
 ```
-POST https://token173.com/v1/chat/completions
+POST https://token173.net/v1/chat/completions
 ```
 
 这意味着：
@@ -62,7 +62,7 @@ import http.client
 import json
 
 # 1. 修改为你的Token173中转 API 域名，例如：
-#https://token173.com/
+#https://token173.net/
 conn = http.client.HTTPSConnection("你的中转API域名")
 
 payload = json.dumps({
