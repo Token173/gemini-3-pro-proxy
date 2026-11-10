@@ -8,9 +8,8 @@ Token173（https://token173.net）把 Gemini 3 Pro 放在国内节点上，OpenA
 
 | 模型 ID | 说明 |
 |---|---|
-| `gemini-3-pro` | 质量优先，长文档、多图分析、复杂推理 |
+| `gemini-3-pro-preview` | 质量优先，长文档、多图分析、复杂推理 |
 | `gemini-3.8-flash` | 速度优先，实时对话、批量任务 |
-| `gemini-2.5-pro` | 兼容老项目 |
 
 ## 接入
 
@@ -19,7 +18,7 @@ curl https://token173.net/v1/chat/completions \
   -H "Authorization: Bearer sk-你的令牌" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "gemini-3-pro",
+    "model": "gemini-3-pro-preview",
     "messages": [{"role": "user", "content": "分析这份财报的三个风险点"}]
   }'
 ```
@@ -32,7 +31,7 @@ from openai import OpenAI
 client = OpenAI(api_key="sk-你的令牌", base_url="https://token173.net/v1")
 
 r = client.chat.completions.create(
-    model="gemini-3-pro",
+    model="gemini-3-pro-preview",
     messages=[{"role": "user", "content": "这两份合同的关键差异在哪？"}],
     max_tokens=4096,
 )
@@ -48,7 +47,7 @@ with open("chart.png", "rb") as f:
     b64 = base64.b64encode(f.read()).decode()
 
 r = client.chat.completions.create(
-    model="gemini-3-pro",
+    model="gemini-3-pro-preview",
     messages=[{
         "role": "user",
         "content": [
@@ -76,7 +75,7 @@ Pro 的单价是 Flash 的好几倍，别默认全上 Pro。
 
 | 工具 | 配置 |
 |---|---|
-| Cherry Studio | 供应商 Gemini，地址 `https://token173.net`，模型 `gemini-3-pro` |
+| Cherry Studio | 供应商 Gemini，地址 `https://token173.net`，模型 `gemini-3-pro-preview` |
 | Gemini CLI | `GOOGLE_GEMINI_BASE_URL=https://token173.net` |
 | Cursor | 用 OpenAI 兼容模式，Base URL `https://token173.net/v1` |
 | Dify | 模型供应商选 OpenAI 兼容，填域名和 Key |
