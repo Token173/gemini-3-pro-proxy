@@ -10,6 +10,7 @@ Token173（https://token173.net）把 Gemini 3 Pro 放在国内节点上，OpenA
 |---|---|
 | `gemini-3-pro-preview` | 质量优先，长文档、多图分析、复杂推理 |
 | `gemini-3.8-flash` | 速度优先，实时对话、批量任务 |
+| `gemini-4-carbon` | 需要长任务或代码审计时上探，[单独一篇](https://github.com/Token173/gemini-4-carbon) |
 
 ## 接入
 
